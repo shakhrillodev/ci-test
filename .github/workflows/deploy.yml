@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Reload PythonAnywhere Web App
-    run: |
-      response=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
-        "https://www.pythonanywhere.com/api/v0/user/${{ secrets.USERNAME }}/webapps/${{ secrets.USERNAME }}.pythonanywhere.com/reload/" \
-        -H "Authorization: Token ${{ secrets.TOKEN }}")
-      echo "Response code: $response"
-      if [ "$response" -ne 200 ]; then
-        echo "Reload failed!"
-        exit 1
-      fi
+        run: |
+          response=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+            "https://www.pythonanywhere.com/api/v0/user/${{ secrets.USERNAME }}/webapps/${{ secrets.USERNAME }}.pythonanywhere.com/reload/" \
+            -H "Authorization: Token ${{ secrets.TOKEN }}")
+          echo "Response code: $response"
+          if [ "$response" -ne 200 ]; then
+            echo "Reload failed!"
+            exit 1
+          fi
