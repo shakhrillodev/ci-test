@@ -10,11 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: secrets   
     steps:
-      - name: Check curl
-        run: curl --version
-      - name: Test
-        run: |
-          echo "Username: $PA_USERNAME"
       - name: Reload PythonAnywhere Web App
         env:
           PA_USERNAME: ${{ secrets.USERNAME }}
