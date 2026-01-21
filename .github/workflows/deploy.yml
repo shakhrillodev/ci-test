@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check curl
+        run: curl --version
+      - name: Test
+        run: |
+          echo "Username: $PA_USERNAME"
       - name: Reload PythonAnywhere Web App
         env:
           PA_USERNAME: ${{ secrets.USERNAME }}
