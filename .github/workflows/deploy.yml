@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    environment: secrets   
     steps:
       - name: Check curl
         run: curl --version
